@@ -11,8 +11,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
     networks:
-      - backend
-      
+      - backend     
   api_service:
     restart: always
     container_name: 'api_service'
@@ -29,7 +28,6 @@ services:
       - mongo_service
     networks:
       - backend   
-
 networks:
   backend:
     driver: bridge

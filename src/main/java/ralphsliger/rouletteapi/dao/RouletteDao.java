@@ -1,7 +1,12 @@
 package ralphsliger.rouletteapi.dao;
-import org.springframework.data.mongodb.repository.MongoRepository;
+
+import java.util.List;
 import ralphsliger.rouletteapi.models.Roulette;
 
-public interface RouletteDao extends MongoRepository<String, Roulette>{
+public interface RouletteDao {
+	Roulette create(Roulette roulette);
 
+	Roulette findById(String id);
+
+	List<Roulette> findAll();
 }

@@ -1,5 +1,6 @@
 package ralphsliger.rouletteapi.service;
 
-public interface BetService {
+public class BetService  {
+
 
 }
