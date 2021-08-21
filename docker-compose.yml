@@ -1,0 +1,40 @@
+version: "3"
+services:
+  mongo_service:
+    restart: always
+    container_name: 'mongo_service'
+    image: mongo
+    ports: 
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: roulettedb
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    networks:
+      - backend
+      
+  api_service:
+    restart: always
+    container_name: 'api_service'
+    build:
+      context: .
+    ports: 
+      - 8080:8080
+    environment:
+      MONGO_SERVER: mongo_service
+      MONGO_DATABASE: roulettedb
+      MONGO_USERNAME: root
+      MONGO_PASSWORD: password
+    depends_on:
+      - mongo_service
+    networks:
+      - backend   
+
+networks:
+  backend:
+    driver: bridge
+
+
+
+        
+      
