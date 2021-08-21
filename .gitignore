@@ -31,3 +31,14 @@ build/
 
 ### VS Code ###
 .vscode/
+.env
+*.wt
+*.2021-08-21T18-13-31Z-00000
+*.2021-08-21T18-29-18Z-00000
+data/db/journal/WiredTigerLog.0000000002
+data/db/journal/WiredTigerPreplog.0000000001
+*.0000000002
+*.lock
+*.bson
+data/db/WiredTiger
+*.turtle
