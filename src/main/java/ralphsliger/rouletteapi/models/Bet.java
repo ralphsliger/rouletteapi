@@ -1,14 +1,20 @@
 package ralphsliger.rouletteapi.models;
+import java.io.Serializable;
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import org.springframework.data.annotation.Id;
+
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 
 @Document(collection = "Bets")
-public class Bet {
+public class Bet implements Serializable{
 
-	@Id
+
+
+	@MongoId(targetType = FieldType.OBJECT_ID)
 	private String id;
 	
 	private String status;
@@ -90,7 +96,10 @@ public class Bet {
 	}
 	
 	
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5920114748851637414L;
 	
 
 }

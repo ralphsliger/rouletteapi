@@ -1,6 +1,7 @@
 package ralphsliger.rouletteapi.dao.impl;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
@@ -20,12 +21,6 @@ public class RouletteDaoImpl implements RouletteDao {
 	@Override
 	public Roulette create(Roulette roulette) {
 		return mongoTemplate.save(roulette);
-	}
-
-	@Override
-	public Roulette findById(String id) {
-		return mongoTemplate.findById(id, Roulette.class);
-		
 	}
 
 	@Override

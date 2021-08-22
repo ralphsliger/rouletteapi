@@ -53,6 +53,13 @@ public class RouletteRestController {
 		return response;
 
 	}
+	
+	@GetMapping("/roulettes/{id}")
+	public ResponseEntity<RouletteRestResponse> findById(@PathVariable(value = "id") String id) {
+		ResponseEntity<RouletteRestResponse> response = service.findById(id);
+		return response;
+	}
+	
 
 }
 

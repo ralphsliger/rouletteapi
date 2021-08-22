@@ -1,13 +1,18 @@
 package ralphsliger.rouletteapi.models;
-import org.springframework.data.mongodb.core.mapping.Document;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.data.annotation.Id;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 
 @Document(collection = "Roulettes")
-public class Roulette {
-	@Id
+public class Roulette implements Serializable {
+	
+	
+	@MongoId(targetType = FieldType.OBJECT_ID)
     private String id;
 	private Boolean status;
 	private List<Bet> bets = new ArrayList<>();
@@ -56,6 +61,9 @@ public class Roulette {
 		this.bets = bets;
 	}
 	
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5579006452940301911L;
 
 }
