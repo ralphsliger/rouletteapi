@@ -11,17 +11,27 @@ public class Roulette {
     private String id;
 	private Boolean status;
 	private List<Bet> bets = new ArrayList<>();
+	private Integer winnerNumber;
 		
 	public Roulette() {
 	}
-	
-	public Roulette(String id, Boolean status, List<Bet> bets) {
-		super();
+		
+	public Roulette(String id, Boolean status, List<Bet> bets, Integer winnerNumber) {
 		this.id = id;
 		this.status = status;
 		this.bets = bets;
+		this.winnerNumber = winnerNumber;
 	}
-	
+
+	public Integer getWinnerNumber() {
+		return winnerNumber;
+	}
+
+
+	public void setWinnerNumber(Integer winnerNumber) {
+		this.winnerNumber = winnerNumber;
+	}
+
 	public String getId() {
 		return id;
 	}

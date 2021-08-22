@@ -11,29 +11,34 @@ public class Bet {
 	@Id
 	private String id;
 	
-	private String Type;
+	private String status;
 	
 	@Min(value = 0)
 	@Max(value = 36)
-	private int number;
+	private Integer number;
 	
 	@Min(value = 0)
 	@Max(value = 10000)
 	private double moneyInGame;
+	
+	private double moneyWon;
 
 	private String color;
 	
 	public Bet() {
 	}
-
-	public Bet(String id, String type, @Min(0) @Max(36) int number, @Min(0) @Max(10000) double moneyInGame,
-			String color) {
+	
+	public Bet(String id, String status, @Min(0) @Max(36) Integer number, @Min(0) @Max(10000) double moneyInGame,
+			double moneyWon, String color) {
 		this.id = id;
-		Type = type;
+		this.status = status;
 		this.number = number;
 		this.moneyInGame = moneyInGame;
+		this.moneyWon = moneyWon;
 		this.color = color;
 	}
+
+
 
 	public String getId() {
 		return id;
@@ -43,19 +48,12 @@ public class Bet {
 		this.id = id;
 	}
 
-	public String getType() {
-		return Type;
-	}
-
-	public void setType(String type) {
-		Type = type;
-	}
-
-	public int getNumber() {
+	
+	public Integer getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 
@@ -74,6 +72,24 @@ public class Bet {
 	public void setColor(String color) {
 		this.color = color;
 	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public double getMoneyWon() {
+		return moneyWon;
+	}
+
+	public void setMoneyWon(double moneyWon) {
+		this.moneyWon = moneyWon;
+	}
+	
+	
 	
 	
 
